@@ -17,7 +17,7 @@ isElected.addEventListener("change", function (){
     contact[isElected.value] = isElected.checked;
 })
 addButton.addEventListener("click",function (){
-    if (inputName.value != null && phone.value != null)
+    if (inputName.value != "" && phone.value != "")
         {
             idIncrement++;
             contact.id = idIncrement;
@@ -27,12 +27,20 @@ addButton.addEventListener("click",function (){
             console.log(json);
         }
     else{
-        alert("Введите данные !")
+        let error = document.createElement('div');
+        error.className = "alert";
+        error.innerHTML = "Вы не ввели все данные ! Повторите попытку";
+        document.querySelector(".wrapper").before(error);
+        sleep(700).then(() => {window.location.reload();})
     }
     }
 )
 
 //
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function loadContacts() {
     reader.readAsText(contactList);
     reader.onload = function () {
