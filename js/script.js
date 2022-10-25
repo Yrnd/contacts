@@ -1,10 +1,25 @@
-var idIncrement = 0; //авто-инкремент
-var contact = {
+let idIncrement = 0; //авто-инкремент
+let contact = {
     "id": 0,
     "name": " ",
     "phone": " ",
     "isElected": false,
 };
+
+// настройки
+const file = {
+    // рекомендуемое название файла
+    suggestedName: 'resources/txt/contactList.txt',
+    types: [
+        {
+            description: 'Text',
+            accept: {
+                'text/plain': '.txt'
+            }
+        }
+    ],
+    excludeAcceptAllOption: true
+}
 
 const addButton = document.querySelector('#add_button');
 //Данные контакта
