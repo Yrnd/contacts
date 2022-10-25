@@ -157,7 +157,6 @@ input::placeholder{
 .elected_label{
     font-size: 1.5rem;
 }
-
 .add_form > .form_unit, .add_form > .form_unit_check{
     display: flex;
     flex-direction: column;
@@ -175,6 +174,7 @@ input::placeholder{
 }
 .add_form > .form_unit_check > input{
     position: relative;
+    display: block;
     z-index: 0;
     height: 25px;
     width: 25px;
@@ -183,7 +183,7 @@ input::placeholder{
 .add_form > .form_unit_check > input:checked{
 }
 .add_form > .form_unit_check > input:checked + .check_custom{
-    background: url("/resources/contact/checkbox.png");
+    background: url("/resources/contact/checkbox.png") no-repeat;
     background-size: contain;
 }
 .check_custom{
