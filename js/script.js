@@ -6,20 +6,6 @@ let contact = {
     "isElected": false,
 };
 
-// настройки
-const file = {
-    // рекомендуемое название файла
-    suggestedName: 'resources/txt/contactList.txt',
-    types: [
-        {
-            description: 'Text',
-            accept: {
-                'text/plain': '.txt'
-            }
-        }
-    ],
-    excludeAcceptAllOption: true
-}
 
 const addButton = document.querySelector('#add_button');
 //Данные контакта
@@ -32,7 +18,7 @@ isElected.addEventListener("change", function (){
     contact[isElected.value] = isElected.checked;
 })
 addButton.addEventListener("click",function (){
-    if (inputName.value != "" && phone.value != "")
+    if (inputName.value !== "" && phone.value !== "")
         {
             idIncrement++;
             contact.id = idIncrement;
