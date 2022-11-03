@@ -1,4 +1,5 @@
 let idIncrement = 0; //авто-инкремент
+
 let contact = {
     "id": 0,
     "name": " ",
@@ -6,6 +7,7 @@ let contact = {
     "isElected": false,
 };
 
+const reader = require('uniq')
 
 const addButton = document.querySelector('#add_button');
 //Данные контакта
@@ -26,6 +28,7 @@ addButton.addEventListener("click",function (){
             contact.phone = phone.value;
             let json = JSON.stringify(contact);
             console.log(json);
+
         }
     else{
         let error = document.createElement('div');
@@ -37,14 +40,14 @@ addButton.addEventListener("click",function (){
     }
 )
 
-//
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function loadContacts() {
-    reader.readAsText(contactList);
-    reader.onload = function () {
-        console.log(reader.result)
-    }
+    fileHandler.readFile("resources/txt/contactList.txt", 'utf8', (err, data) =>{
+        if(err) throw err;
+        console.log(reader(data))
+    })
+
 }

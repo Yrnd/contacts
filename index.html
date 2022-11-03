@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script defer src="js/script.js"></script>
+    <script defer src="js/bundle.js"></script>
     <title>Contacts</title>
 </head>
-<body onload="loadContacts()">
+<body>
     <div class="contacts wrapper">
         <div class="contacts_header">
             <a href="index.html" class="icon">
@@ -14,7 +15,7 @@
             </a>
             <input type="text" class="searchbox" placeholder="Search">
         </div>
-        <div class="contacts_container">
+        <div class="contacts_container" onload="loadContacts()">
             <div class="contact">
             <img class="avatar" src="resources/contact/user.png" width="50" height="50">
             <div class="contact_info">
