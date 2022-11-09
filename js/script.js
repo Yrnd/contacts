@@ -1,4 +1,5 @@
-let idIncrement = 0; //авто-инкремент
+let idIncrement = 0;
+import * as fs from 'fs';
 
 let contact = {
     "id": 0,
@@ -6,8 +7,6 @@ let contact = {
     "phone": " ",
     "isElected": false,
 };
-
-const reader = require('uniq')
 
 const addButton = document.querySelector('#add_button');
 //Данные контакта
@@ -27,8 +26,7 @@ addButton.addEventListener("click",function (){
             contact.name = inputName.value;
             contact.phone = phone.value;
             let json = JSON.stringify(contact);
-            console.log(json);
-
+            console.log(json)
         }
     else{
         let error = document.createElement('div');
@@ -42,12 +40,4 @@ addButton.addEventListener("click",function (){
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-function loadContacts() {
-    fileHandler.readFile("resources/txt/contactList.txt", 'utf8', (err, data) =>{
-        if(err) throw err;
-        console.log(reader(data))
-    })
-
 }
