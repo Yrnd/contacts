@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script defer src="js/bundle.js"></script>
+    <script type="module" defer src="js/script.js"></script>
     <title>Contacts</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
             </a>
             <input type="text" class="searchbox" placeholder="Search">
         </div>
-        <div class="contacts_container" onload="loadContacts()">
+        <div class="contacts_container" onload="loadContactList()">
             <div class="contact">
             <img class="avatar" src="resources/contact/user.png" width="50" height="50">
             <div class="contact_info">
